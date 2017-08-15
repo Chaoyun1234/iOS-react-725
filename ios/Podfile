@@ -8,13 +8,19 @@ target 'iosreact725' do
   # Pods for iosreact725
   pod 'MobileCenter', '~> 0.10.1'
   pod 'RNMobileCenterShared', '~> 0.7.0'
+  pod 'MobileCenter'
+  pod 'MobileCenter/Crashes'
+  pod 'MobileCenter/Analytics'
+  pod 'MobileCenter/Push'
+  
+  end
+
 
   
 
   target 'iosreact725Tests' do
     inherit! :search_paths
     # Pods for testing
-  end
 
 end
 
@@ -23,10 +29,9 @@ target 'iosreact725-tvOS' do
   # use_frameworks!
 
   # Pods for iosreact725-tvOS
-
+end
   target 'iosreact725-tvOSTests' do
     inherit! :search_paths
-    # Pods for testing
-  end
+
 
 end
