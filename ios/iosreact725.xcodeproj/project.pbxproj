@@ -44,6 +44,7 @@
 		90C1300AC7044F3580EB3041 /* libRNAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E7C51CF10D49039DD4720F /* libRNAnalytics.a */; };
 		BE0171A1359E4CAB9ED0C5A1 /* libRNCrashes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D80CF20C97DF4F0F8E5C9B4D /* libRNCrashes.a */; };
 		C43EB8AF79698A13E8E16D28 /* libPods-iosreact725Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 171ED99E573DF236670ABC2C /* libPods-iosreact725Tests.a */; };
+		FED1B50D3E834094AD76D8AE /* libRNPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36837C0FC8784BD19010AA62 /* libRNPush.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -257,6 +258,13 @@
 			remoteGlobalIDString = C35AEC211EF91F9300931F0C;
 			remoteInfo = RNMobileCenter;
 		};
+		4AAB5ED11F55554C007A3D46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2EDF5ADB620C4D568D969359 /* RNPush.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BA189FAA1EEE74F100CAD13F;
+			remoteInfo = RNPush;
+		};
 		5E9157321DD0AC6500FF2AA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */;
@@ -315,7 +323,10 @@
 		20A4671584844358B993FC64 /* MobileCenter-Config.plist */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.xml; name = "MobileCenter-Config.plist"; path = "iosreact725/MobileCenter-Config.plist"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* iosreact725-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iosreact725-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* iosreact725-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iosreact725-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EDF5ADB620C4D568D969359 /* RNPush.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNPush.xcodeproj; path = "../node_modules/mobile-center-push/ios/RNPush.xcodeproj"; sourceTree = "<group>"; };
 		303428D9789F9234D14996CE /* Pods-iosreact725.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosreact725.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iosreact725/Pods-iosreact725.debug.xcconfig"; sourceTree = "<group>"; };
+		36837C0FC8784BD19010AA62 /* libRNPush.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNPush.a; sourceTree = "<group>"; };
+		4AAB5F121F5559CD007A3D46 /* iosreact725.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = iosreact725.entitlements; path = iosreact725/iosreact725.entitlements; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		5F03F44E831C7FDD01662C7C /* libPods-iosreact725-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iosreact725-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F51E047B817CE277FB3D075 /* Pods-iosreact725Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosreact725Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iosreact725Tests/Pods-iosreact725Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -362,6 +373,7 @@
 				262A84ACB02439EB71970602 /* libPods-iosreact725.a in Frameworks */,
 				90C1300AC7044F3580EB3041 /* libRNAnalytics.a in Frameworks */,
 				BE0171A1359E4CAB9ED0C5A1 /* libRNCrashes.a in Frameworks */,
+				FED1B50D3E834094AD76D8AE /* libRNPush.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +484,7 @@
 		13B07FAE1A68108700A75B9A /* iosreact725 */ = {
 			isa = PBXGroup;
 			children = (
+				4AAB5F121F5559CD007A3D46 /* iosreact725.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -537,6 +550,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		4AAB5EAE1F55554C007A3D46 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4AAB5ED21F55554C007A3D46 /* libRNPush.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		5E91572E1DD0AC6500FF2AA8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -572,6 +593,7 @@
 				ADA01276659E48759CF03E01 /* RNMobileCenter.xcodeproj */,
 				ECC01AA7CCB940199C6B6E7F /* RNAnalytics.xcodeproj */,
 				A42662B5252C458780BE19F4 /* RNCrashes.xcodeproj */,
+				2EDF5ADB620C4D568D969359 /* RNPush.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -728,6 +750,14 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 3D27XEAVGH;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -807,6 +837,10 @@
 				{
 					ProductGroup = 4A75BB7E1F26E1AD00D5A55F /* Products */;
 					ProjectRef = ADA01276659E48759CF03E01 /* RNMobileCenter.xcodeproj */;
+				},
+				{
+					ProductGroup = 4AAB5EAE1F55554C007A3D46 /* Products */;
+					ProjectRef = 2EDF5ADB620C4D568D969359 /* RNPush.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1014,6 +1048,13 @@
 			fileType = archive.ar;
 			path = libRNMobileCenter.a;
 			remoteRef = 4A75BB811F26E1AD00D5A55F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4AAB5ED21F55554C007A3D46 /* libRNPush.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNPush.a;
+			remoteRef = 4AAB5ED11F55554C007A3D46 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */ = {
@@ -1381,12 +1422,14 @@
 					"$(SRCROOT)/../node_modules/mobile-center/ios/RNMobileCenter",
 					"$(SRCROOT)/../node_modules/mobile-center-analytics/ios/RNAnalytics",
 					"$(SRCROOT)/../node_modules/mobile-center-crashes/ios/RNCrashes",
+					"$(SRCROOT)/../node_modules/mobile-center-push/ios/RNPush",
 				);
 				INFOPLIST_FILE = iosreact725Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1411,12 +1454,14 @@
 					"$(SRCROOT)/../node_modules/mobile-center/ios/RNMobileCenter",
 					"$(SRCROOT)/../node_modules/mobile-center-analytics/ios/RNAnalytics",
 					"$(SRCROOT)/../node_modules/mobile-center-crashes/ios/RNCrashes",
+					"$(SRCROOT)/../node_modules/mobile-center-push/ios/RNPush",
 				);
 				INFOPLIST_FILE = iosreact725Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1435,6 +1480,7 @@
 			baseConfigurationReference = 303428D9789F9234D14996CE /* Pods-iosreact725.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iosreact725/iosreact725.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 3D27XEAVGH;
@@ -1443,6 +1489,7 @@
 					"$(SRCROOT)/../node_modules/mobile-center/ios/RNMobileCenter",
 					"$(SRCROOT)/../node_modules/mobile-center-analytics/ios/RNAnalytics",
 					"$(SRCROOT)/../node_modules/mobile-center-crashes/ios/RNCrashes",
+					"$(SRCROOT)/../node_modules/mobile-center-push/ios/RNPush",
 				);
 				INFOPLIST_FILE = iosreact725/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1461,6 +1508,7 @@
 			baseConfigurationReference = 9AD84EF1EAAA9A37FAA40E38 /* Pods-iosreact725.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iosreact725/iosreact725.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3D27XEAVGH;
 				HEADER_SEARCH_PATHS = (
@@ -1468,6 +1516,7 @@
 					"$(SRCROOT)/../node_modules/mobile-center/ios/RNMobileCenter",
 					"$(SRCROOT)/../node_modules/mobile-center-analytics/ios/RNAnalytics",
 					"$(SRCROOT)/../node_modules/mobile-center-crashes/ios/RNCrashes",
+					"$(SRCROOT)/../node_modules/mobile-center-push/ios/RNPush",
 				);
 				INFOPLIST_FILE = iosreact725/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1499,11 +1548,13 @@
 					"$(SRCROOT)/../node_modules/mobile-center/ios/RNMobileCenter",
 					"$(SRCROOT)/../node_modules/mobile-center-analytics/ios/RNAnalytics",
 					"$(SRCROOT)/../node_modules/mobile-center-crashes/ios/RNCrashes",
+					"$(SRCROOT)/../node_modules/mobile-center-push/ios/RNPush",
 				);
 				INFOPLIST_FILE = "iosreact725-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1538,11 +1589,13 @@
 					"$(SRCROOT)/../node_modules/mobile-center/ios/RNMobileCenter",
 					"$(SRCROOT)/../node_modules/mobile-center-analytics/ios/RNAnalytics",
 					"$(SRCROOT)/../node_modules/mobile-center-crashes/ios/RNCrashes",
+					"$(SRCROOT)/../node_modules/mobile-center-push/ios/RNPush",
 				);
 				INFOPLIST_FILE = "iosreact725-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1578,6 +1631,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.iosreact725-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1603,6 +1657,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
