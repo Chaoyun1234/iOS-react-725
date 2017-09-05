@@ -18,6 +18,7 @@
 @import MobileCenter;
 @import MobileCenterAnalytics;
 @import MobileCenterCrashes;
+@import MobileCenterPush;
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -31,7 +32,7 @@
   [RNAnalytics registerWithInitiallyEnabled:true];  // Initialize Mobile Center analytics
 
   [RNMobileCenter register];  // Initialize Mobile Center
-  [MSMobileCenter setLogUrl:@"https://in-staging-south-centralus.staging.avalanch.es"];
+  //[MSMobileCenter setLogUrl:@"https://in-staging-south-centralus.staging.avalanch.es"];
 
   jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
 

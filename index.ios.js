@@ -3,89 +3,81 @@
  * https://github.com/facebook/react-native
  * @flow
  */
-
-import React, { Component } from 'react';
 import MobileCenter from 'mobile-center';
-import Crashes from "mobile-center-crashes";
 import Analytics from "mobile-center-analytics";
-import Push from "mobile-center-push";
-import { AppState, Alert } from 'react-native';
+import Crashes from "mobile-center-crashes";
+import Push from 'mobile-center-push';
+import React, { Component } from 'react';
 import {
+  AppState,
   AppRegistry,
   StyleSheet,
   Text,
   View,
-  Button,
-  Alert,
-  AppState
+  Button
 } from 'react-native';
-async function ClickBtn() {  
-  const installId = await MobileCenter.getInstallId();
-    alert(installId);  
- }
 
- function ChangeDisable() {  
-     this.setState({  
-         disabled: this.state.disabled ? false : true  
-   }); 
-   throw new Error("This is a test javascript crash!"); 
- }  
-
+Analytics.trackEvent("click");
 export default class iosreact725 extends Component {
-  constructor(props){        
-      super(props);   
-      this.state = {  
-          disabled : false,  
-       }  
-   }
-  render() {
-    Analytics.trackEvent("Learn More");
-    return (
-      <View style={styles.container}>
-         <Button  
-                onPress={ClickBtn}  
-                title="Learn More"  
-                color="green"  
-               disabled={this.state.disabled}  
-               accessibilityLabel="Learn more about this purple button" 
-        /> 
-        <Button  
-              onPress={ChangeDisable.bind(this)}  
-              title="change"  
-              color="gray"  
-             accessibilityLabel="Learn more about this purple button"
-        /> 
-      </View>
-    );
-  }
+    render() {
+        return (
+            <View style={styles.container}>
+                <Text style={styles.welcome}>
+                    Welcome to React Native!
+        </Text>
+                <Button
+                    title="crash"
+                    color="red"
+                    onPress={onCrash}
+                >
+                </Button>   
+                <Button
+                    title="click"
+                    color="green"
+                    onPress={onClick}
+                >
+                </Button>
+            </View>
+        );
+    }
 }
+//generateTestCrash
+function onCrash() {
+    throw new Error("This is a test JavaScript Crash");
+}
+ //generate install ID
+async function onClick() {
+    const installId = await MobileCenter.getInstallId();
+    Alert.alert(installId);
+}
+
 Push.setEventListener({
-  pushNotificationReceived: function (pushNotification) {
-    let message = pushNotification.message;
-    let title = pushNotification.title;
+    pushNotificationReceived: function (pushNotification) {
+        let message = pushNotification.message;
+        let title = pushNotification.title;
 
-    if (message === null || message === undefined) {
-      // Android messages received in the background don't include a message. On Android, that fact can be used to
-      // check if the message was received in the background or foreground. For iOS the message is always present.
-      title = "Android background";
-      message = "<empty>";
-    }
+        if (message === null || message === undefined) {
+            // Android messages received in the background don't include a message. On Android, that fact can be used to
+            // check if the message was received in the background or foreground. For iOS the message is always present.
+            title = "Android background";
+            message = "<empty>";
+        }
 
-    // Custom name/value pairs set in the Mobile Center web portal are in customProperties
-    if (pushNotification.customProperties && Object.keys(pushNotification.customProperties).length > 0) {
-      message += '\nCustom properties:\n' + JSON.stringify(pushNotification.customProperties);
-    }
+        // Custom name/value pairs set in the Mobile Center web portal are in customProperties
+        if (pushNotification.customProperties && Object.keys(pushNotification.customProperties).length > 0) {
+            message += '\nCustom properties:\n' + JSON.stringify(pushNotification.customProperties);
+        }
+        if (AppState.currentState === 'active') {
+            Alert.alert(title, message);
+        }
 
-    if (AppState.currentState === 'active') {
-      Alert.alert(title, message);
+        else {
+            // Sometimes the push callback is received shortly before the app is fully active in the foreground.
+            // In this case you'll want to save off the notification info and wait until the app is fully shown
+            // in the foreground before displaying any UI. You could use AppState.addEventListener to be notified
+            // when the app is fully in the foreground.
+        }
     }
-    else {
-      // Sometimes the push callback is received shortly before the app is fully active in the foreground.
-      // In this case you'll want to save off the notification info and wait until the app is fully shown
-      // in the foreground before displaying any UI. You could use AppState.addEventListener to be notified
-      // when the app is fully in the foreground.
-    }
-  }
 });
 const styles = StyleSheet.create({
   container: {
